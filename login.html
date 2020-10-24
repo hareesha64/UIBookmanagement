@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       body {
+          background-color:greenyellow;
+          text-align: center;
+          font-size: 20px;
+          
+          border-style: solid;
+  box-sizing: border-box;
+        }
+  </style>
+  <script>
+    function validateForm()
+    {
+       
+        var mail= document.myform.email.value;
+        
+        
+        var pwd= document.myform.password.value;
+       
+        
+        if(mail.length<1)
+        {
+          document.getElementById('error-mail').innerHTML = " Please Enter UserName *";
+                document.getElementById('error-mail').style.color="red";
+        }
+        if(pwd.length<1)
+        {
+          document.getElementById('error-pwd').innerHTML = " Please Enter password *";
+                document.getElementById('error-pwd').style.color="red";
+        }
+        if(mail.length<1||pwd.length<1)
+        {
+          return false;
+        }
+        else
+        {
+          alert("logged in");
+        }
+    }
+    
+
+
+
+</script>
+</head>
+<body>
+​
+<div class="container">
+  <h2>Login form</h2>
+  <form  name="myform" onsubmit=" return validateForm()"  >
+    
+    
+    
+    <div class="form-group">
+        <label for="email">Enter UserName *:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        <span id="error-mail"></span>
+      </div>
+   
+    
+    <div class="form-group">
+        <label for="password">Enter password *:</label>
+        <input type="password" class="form-control" id="password" placeholder= "Enter password" name="password">
+        <span id="error-pwd"></span>
+    </div>
+   
+    <div class="form-group">
+      <input type="submit" value="Send">
+    </div>
+    
+  </form>
+</div>
+
+​
+</body>
+</html>
+​

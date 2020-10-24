@@ -1,0 +1,101 @@
+<html>
+
+    
+ <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+         body {
+            background-color: wheat;
+            text-align: center;
+            font-size: 20px;
+            
+            border-style: solid;
+    box-sizing: border-box;
+          }
+    </style>
+    
+    <script>
+        function validateForm(){
+            var name = document.forms["myForm"]["your-name"].value;
+            var mail = document.forms["myForm"]["your-mail"].value;
+            var pwd1 = document.forms["myForm"]["your-password"].value;
+            var pwd2= document.forms["myForm"]["your-cpassword"].value;
+        
+            if (name.length<1) {
+                document.getElementById('error-name').innerHTML = " Please Enter name *";
+                document.getElementById('error-name').style.color="red";
+            }
+            if (mail.length<1) {
+                document.getElementById('error-mail').innerHTML = " Please Enter mail *";
+                document.getElementById('error-mail').style.color="red";
+            }
+            if (pwd1.length<1) {
+                document.getElementById('error-password').innerHTML = " Please Enter password *"; 
+                document.getElementById('error-password').style.color="red";     
+            }
+            if (pwd2.length<1) {
+                document.getElementById('error-cpassword').innerHTML = " Please Enter password *";
+                document.getElementById('error-cpassword').style.color="red";
+            }          
+            if(name.length<1 || mail.length<1 || pwd1.length<1 || pwd2.length<1){
+                   return false;
+            }  
+            else
+            {
+                alert("registered successfully");
+            }          
+        }
+        </script>
+        </head>
+        <body>
+<form name="myForm" method="post" onsubmit="return validateForm()">
+	<div class="form-group">
+		<label>Enter name</label> 
+        <input type="text" name="your-name" class="form-control" placeholder="Enter  name">
+        <span id="error-name"></span>
+	</div>
+	<div class="form-group"> 
+		<label>Enter mail</label> 
+        <input type="email" name="your-mail" class="form-control" placeholder="Enter mail">
+        <span id="error-mail"></span>
+    </div>
+    <div>
+        <label for="gender">Choose Gender :</label>
+    
+        <select name="gender" name="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          
+        </select>
+      </div>
+	<div class="form-group">
+		<label>Enter age</label> 
+        <input type="number" name="your-age" class="form-control" placeholder="Enter age">
+        
+	</div>
+	<div class="form-group">
+		<label>Enter Password</label>
+        <input type="password" name="your-password" class="form-control" placeholder="Enter password">
+         <span id="error-password"></span>
+    </div>
+    <div class="form-group">
+		<label>Confirm Password</label>
+        <input type="password" name="your-cpassword" class="form-control" placeholder="Enter password">
+         <span id="error-cpassword"></span>
+	</div>
+	
+    
+   
+    
+
+       <div class="form-group">
+        <input type="submit" value="Register">
+      </div>
+</form>
+</body>
+</html>
